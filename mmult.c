@@ -20,20 +20,50 @@
  * @param bCols : the number of columns in b.
  * @return 0 if the matrix multiplication is successful.
  */
-int mmult(double *c, 
-	      double *a, int aRows, int aCols, 
-	      double *b, int bRows, int bCols) {
+//// init
+//int mmult(double *c,
+//	      double *a, int aRows, int aCols,
+//	      double *b, int bRows, int bCols) {
+//
+//    for(int i = 0; i < aRows; ++i) {
+//        for(int j = 0; j < bCols; ++j) {
+//            c[i * bCols + j] = 0;
+//            for(int k = 0; k < aRows; ++k) {
+//                c[i * bCols + j] += a[i * aRows + k] * b[k * bCols + j];
+//            }
+//        }
+//    }
+//
+//  return 0;
+//}
+//// copied
+//int mmult(double *c,
+//          double *a, int aRows, int aCols,
+//          double *b, int bRows, int bCols) {
+//
+//    for (int i = 0; i < aRows; i++) {
+//        for (int j = 0; j < bCols; j++)
+//            c[i][j] = 0;
+//        for (int k = 0; k < aRows; k++)
+//            for (int l = 0; l < bCols; l++)
+//                c[i][l] += a[i][k] * b[k][l];
+//    }
+//    return 0;
+//}
+//// test
+int mmult(double *c,
+          double *a, int aRows, int aCols,
+          double *b, int bRows, int bCols) {
 
-    for(int i = 0; i < aRows; ++i) {
-        for(int j = 0; j < bCols; ++j) {
+    for (int i = 0; i < aRows; i++) {
+        int j = 0;
+        for (j = 0; j < bCols; j++)
             c[i * bCols + j] = 0;
-            for(int k = 0; k < aRows; ++k) {
+        for (int k = 0; k < aRows; k++)
+            for (int l = 0; l < bCols; l++)
                 c[i * bCols + j] += a[i * aRows + k] * b[k * bCols + j];
-            }
-        }
     }
-
-  return 0;
+    return 0;
 }
 
 
