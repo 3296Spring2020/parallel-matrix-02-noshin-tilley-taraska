@@ -66,17 +66,35 @@
 //     return 0;
 // }
 //Test2
+// int mmult(double *c,
+//           double *a, int aRows, int aCols,
+//           double *b, int bRows, int bCols) {
+//     int N = aRows;
+//     for (int i = 0; i < N; i++) {
+//         int j = 0;
+//         for (j = 0; j < N; j++)
+//             c[i * bCols + j] = 0;
+//         for (int k = 0; k < N; k++)
+//             for (int l = 0; l < N; l++)
+//                 c[i * N + j] += a[i * N + k] * b[k * N + j];
+//     }
+//     return 0;
+// }
+
+////last
 int mmult(double *c,
           double *a, int aRows, int aCols,
           double *b, int bRows, int bCols) {
-    int N = aRows;
-    for (int i = 0; i < N; i++) {
-        int j = 0;
-        for (j = 0; j < N; j++)
+    int i,j,k;
+    for (i = 0; i < aRows; i++) {
+        for (j = 0; j < bCols; j++) {
             c[i * bCols + j] = 0;
-        for (int k = 0; k < N; k++)
-            for (int l = 0; l < N; l++)
-                c[i * N + j] += a[i * N + k] * b[k * N + j];
+        }
+        for (k = 0; k < aCols; k++) {
+            for (j = 0; j < bCols; j++) {
+                c[i * bCols + j] += a[i * aCols + k] * b[k * bCols + j];
+            }
+        }
     }
     return 0;
 }
