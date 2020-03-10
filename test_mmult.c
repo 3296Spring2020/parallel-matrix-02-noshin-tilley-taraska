@@ -34,4 +34,5 @@ int main(void) {
     free(a);
     free(b);
     free(c_actual);
+    free(c_calc);
 }
