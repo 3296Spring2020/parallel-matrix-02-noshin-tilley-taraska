@@ -88,11 +88,11 @@ int mmult(double *c,
     int i,j,k;
     for (i = 0; i < aRows; i++) {
         for (j = 0; j < bCols; j++) {
-            c[i * bCols + j] = 0;
+            c[i*bCols + j] = 0;
         }
         for (k = 0; k < aCols; k++) {
             for (j = 0; j < bCols; j++) {
-                c[i * bCols + j] += a[i * aCols + k] * b[k * bCols + j];
+                c[i*bCols + j] += a[i*aCols + k] * b[k*bCols + j];
             }
         }
     }
