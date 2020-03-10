@@ -25,6 +25,17 @@ int main(int argc, char* argv[])
     MPI_Status status;
 
     /* insert other global variables here */
+    int a_row, a_col, b_col;
+    int num_sent, sender;
+    int myid, numprocs;
+    double starttime, endtime;
+    MPI_Status status;
+
+  /* insert other global variables here */
+    double *buffer;
+    int anstype, current_row;
+  // for accumulating the sum
+    double *result;
 
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
@@ -44,7 +55,7 @@ int main(int argc, char* argv[])
             starttime = MPI_Wtime();
 
             // number of rows sent
-            int num_sent = 0;
+            num_sent = 0;
             // Insert your master code here to store the product into cc1
             // broadcast the matrix bb to all slaves
             MPI_Bcast(bb, a_col * b_col, MPI_DOUBLE, 0, MPI_COMM_WORLD);
