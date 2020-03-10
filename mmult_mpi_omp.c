@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
             starttime = MPI_Wtime();
 
             // number of rows sent
-            num_sent = 0;
+            int num_sent = 0;
             // Insert your master code here to store the product into cc1
             // broadcast the matrix bb to all slaves
             MPI_Bcast(bb, a_col * b_col, MPI_DOUBLE, 0, MPI_COMM_WORLD);
