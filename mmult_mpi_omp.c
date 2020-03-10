@@ -27,9 +27,7 @@ int main(int argc, char* argv[])
     /* insert other global variables here */
     int a_row, a_col, b_col;
     int num_sent, sender;
-    int myid, numprocs;
-    double starttime, endtime;
-    MPI_Status status;
+    
 
   /* insert other global variables here */
     double *buffer;
