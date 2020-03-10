@@ -36,5 +36,16 @@ int mmult(double *c,
   return 0;
 }
 
+double* gen_matrix(int n, int m) {
+  int i, j;
+  double *a = malloc(sizeof(double) * n * m);
+  for (i = 0; i < n; i++) {
+    for (j = 0; j < m; j++) {
+      a[i*m + j] = (double) ((int) rand() % 10);
+    }
+  }
+  return a;
+}
+
 
 
