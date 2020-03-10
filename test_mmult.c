@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "mat.h"
 
@@ -19,6 +20,33 @@ int test_unoptimized(double *a, int arows, int acols,
     return are_same;
 }
 
+int make_graphs(){
+    for (int size = 1; size < 10; size++){
+        clock_t start, end, fin_time1, fin_time2;
+//    malloc(MAT_SIZE * MAT_SIZE * sizeof(double));
+//    malloc(MAT_SIZE * MAT_SIZE * sizeof(double));
+        double* new_mat1 = malloc(size * size * sizeof(double));
+        double* new_mat2 = malloc(size * size * sizeof(double));
+        double* m1a = gen_matrix(size,size); // needs malloc
+        double* m1b = gen_matrix(size,size); // needs malloc
+        start = clock();
+        mmult1(new_mat1 ,m1a,size,size,m1b,size,size);
+        end = clock();
+        fin_time1 = (end - start)/ CLOCKS_PER_SEC;
+        printf("time1: ");
+        printf(fin_time1);
+        start = clock();
+        mmult2(new_mat2 ,m1a,size,size,m1b,size,size);
+        end = clock();
+        fin_time2 = (end - start)/ CLOCKS_PER_SEC;
+        printf("time2: ");
+        printf(fin_time2);
+
+    }
+    return 0;
+
+}
+
 int main(void) {
     double *a = read_matrix_from_file("a.txt");
     double *b = read_matrix_from_file("b.txt");
@@ -31,7 +59,10 @@ int main(void) {
 
     puts("All tests pass.");
 
+
     free(a);
     free(b);
     free(c_actual);
+    free(c_calc);
+    make_graphs();
 }
