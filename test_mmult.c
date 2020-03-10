@@ -34,13 +34,15 @@ int make_graphs(){
         end = clock();
         fin_time1 = (end - start)/ CLOCKS_PER_SEC;
         printf("time1: ");
-        printf(fin_time1);
+        printf("%f\n",fin_time1);
         start = clock();
         mmult2(new_mat2 ,m1a,size,size,m1b,size,size);
         end = clock();
         fin_time2 = (end - start)/ CLOCKS_PER_SEC;
         printf("time2: ");
-        printf(fin_time2);
+        printf("%f\n",fin_time2);
+        free(new_mat1);
+        free(new_mat2);
 
     }
     return 0;
