@@ -48,5 +48,5 @@ int main(int argc, char* argv[]) {
     } else {
         fprintf(stderr, "Usage %s <n>\n", argv[0]);
     }
-}
 
+}
