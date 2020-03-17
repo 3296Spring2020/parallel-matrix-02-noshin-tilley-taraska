@@ -40,6 +40,7 @@ int mmult2(double *c,
             double *a, int aRows, int aCols,
             double *b, int bRows, int bCols) {
 
+
     for (int i = 0; i < aRows; i++) {
         for (int j = 0; j < bCols; j++) {
             c[i*bCols + j] = 0;
@@ -68,7 +69,6 @@ int mmult(double *c,
 
     return 0;
 }
-
 
 
 
