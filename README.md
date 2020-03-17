@@ -22,6 +22,7 @@ and I did the vectorized SIMD matrix multiplication. I also helped with bugs and
 
 ## Dominic Taraska
 
+I worked on answering the research question and the matrix multiplication on Wolfgand cluster with MPI (Distributed Memory). I also made the included graph and helped with general troubleshooting. 
 
 # Full Project Life Cycle
 We used the project board as a way to realize what needed to get done, we grouped tasks into when they needed to be done and
@@ -47,3 +48,5 @@ I would say as of right now testing and reporting is about 50% while writing the
 work involved with getting the matrices to the right format and getting files to work together properly.
 
 # Relevant Things To Project
+
+![alt text](https://github.com/3296Spring2020/parallel-matrix-02-noshin-tilley-taraska/blob/master/graph-page-001.jpg?raw=true)
