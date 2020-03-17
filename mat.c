@@ -136,7 +136,8 @@ void writeArrayToFile(char* fileName, double* arr, int arrlen){
     for (int i = 0; i < arrlen; ++i)
         fprintf(fptr, "%f", arr[i]);
         fprintf(fptr, "%s", ", ");
-    fprintf(fptr, "\n");
+    fprintf(fptr, " \n");
+    fclose(fileName);
 //    fprintf(fptr,"%s",message);
 //    fwrite(arr, sizeof(arr), 10, fptr);
 }
