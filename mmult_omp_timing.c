@@ -14,7 +14,8 @@ int mmult(double *c, double *a, int aRows, int aCols, double *b, int bRows, int 
 int mmult_omp(double *c,double *a, int aRows, int aCols,double *b, int bRows, int bCols);
 
 double* gen_matrix(int n, int m);
-void compare_matrices(double* a, double* b, int nRows, int nCols);
+// was a void comp_mat earlier
+int compare_matrices(double* a, double* b, int nRows, int nCols);
 
 double deltaTime(struct timespec* start, struct timespec* end) {
   double delta = (end->tv_sec - start->tv_sec) + (end->tv_nsec - start->tv_nsec)/1e9;
