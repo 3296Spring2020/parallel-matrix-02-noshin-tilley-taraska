@@ -21,8 +21,10 @@ int test_unoptimized(double *a, int arows, int acols,
 }
 
 int make_graphs(){
-    for (int size = 1; size < 10; size++){
-        clock_t start, end, fin_time1, fin_time2;
+    for (int size = 400; size < 410; size++){
+        clock_t start, end;
+        double fin_time1, fin_time2;
+
 //    malloc(MAT_SIZE * MAT_SIZE * sizeof(double));
 //    malloc(MAT_SIZE * MAT_SIZE * sizeof(double));
         double* new_mat1 = malloc(size * size * sizeof(double));
@@ -32,15 +34,15 @@ int make_graphs(){
         start = clock();
         mmult1(new_mat1 ,m1a,size,size,m1b,size,size);
         end = clock();
-        fin_time1 = (end - start);
+        fin_time1 = ((double) (end - start)) / CLOCKS_PER_SEC;;
         printf("time1: ");
-        printf("%lu\n",fin_time1);
+        printf("%f\n",fin_time1);
         start = clock();
         mmult2(new_mat2 ,m1a,size,size,m1b,size,size);
         end = clock();
-        fin_time2 = (end - start);
+        fin_time2 = ((double) (end - start)) / CLOCKS_PER_SEC;;
         printf("time2: ");
-        printf("%lu\n",fin_time2);
+        printf("%f\n",fin_time2);
         free(new_mat1);
         free(new_mat2);
 
