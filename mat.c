@@ -128,3 +128,13 @@ double deltaTime(struct timespec *start, struct timespec *end) {
     double delta = (end->tv_sec - start->tv_sec) + (end->tv_nsec - start->tv_nsec) / 1e9;
     return delta;
 }
+
+// converts a matrix size and its finishing time to graph format
+void writeArrayToFile(char* fileName, double* arr, int arrlen){
+    FILE *fptr = fopen (fileName,"a");
+    for (int i = 0; i < arrlen; ++i)
+        fprintf(fptr, "%f", arr[i]);
+    fprintf(fptr, "\n");
+//    fprintf(fptr,"%s",message);
+//    fwrite(arr, sizeof(arr), 10, fptr);
+}
