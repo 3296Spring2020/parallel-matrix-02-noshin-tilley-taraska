@@ -87,12 +87,12 @@ int main(int argc, char* argv[]) {
                 for (j = 0; j < aCols; j++) {
                     buff[j] = aa[i * aCols + j];
                 }
-                MPI_Send(buffer, aCols, MPI_DOUBLE, i + 1, i + 1, MPI_COMM_WORLD);
+                MPI_Send(buff, aCols, MPI_DOUBLE, i + 1, i + 1, MPI_COMM_WORLD);
                 sent++;
             }
             for (i = 0; i < aRows; i++) {
                 MPI_Recv(&ans, 1, MPI_DOUBLE, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
-                sender = status.MPI_SOURCE;
+                sentFrom = status.MPI_SOURCE;
                 ansType = status.MPI_TAG;
                 cc1[ansType - 1] = ans;
 
@@ -100,7 +100,7 @@ int main(int argc, char* argv[]) {
                     for (j = 0; j < aCols; j++) {
                         buff[j] = aa[sent * aCols + j];
                     }
-                    MPI_Send(buffer, aCols, MPI_DOUBLE, sentFrom, sent + 1, MPI_COMM_WORLD);
+                    MPI_Send(buff, aCols, MPI_DOUBLE, sentFrom, sent + 1, MPI_COMM_WORLD);
                     sent++;
                 } else {
                     MPI_Send(MPI_BOTTOM, 0, MPI_DOUBLE, sentFrom, 0, MPI_COMM_WORLD);
@@ -120,7 +120,7 @@ int main(int argc, char* argv[]) {
                 MPI_Bcast(bb, (bRows*bCols), MPI_DOUBLE, 0, MPI_COMM_WORLD);
                 if(myid <= aRows){
                     while(1){
-                        MPI_Recv(buffer,aCols,MPI_DOUBLE, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+                        MPI_Recv(buff,aCols,MPI_DOUBLE, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
                         if(status.MPI_TAG == 0){
                             break;
                         }
