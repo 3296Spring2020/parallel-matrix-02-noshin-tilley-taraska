@@ -37,6 +37,20 @@ int main(int argc, char* argv[]) {
     MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
     MPI_Comm_rank(MPI_COMM_WORLD, &myid);
     if (argc > 1) {
+        
+        
+        //FILE* matrixAPtr , *matrixBPtr;
+        //matrixAPtr = fopen(argv[1],"r");
+        //matrixBPtr = fopen(argv[2],"r");
+        //fscanf(matrixAPtr, "rows(%d) cols(%d)", &aRows, &aCols);
+        //fscanf(matrixBPtr, "rows(%d) cols(%d)", &bRows, &bCols);
+        //if(aCols != bRows || aRows!= bCols){
+            //fprintf(stderr, "*******Matrices have different dimensions!*******\n");
+            //exit(1);
+       // }
+        
+        
+        
         bCols = atoi(argv[1]);
         aRows = atoi(argv[1]);
         bRows = aRows + 2;
