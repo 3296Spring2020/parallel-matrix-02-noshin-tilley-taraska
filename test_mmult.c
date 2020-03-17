@@ -21,7 +21,15 @@ int test_unoptimized(double *a, int arows, int acols,
 }
 
 int make_graphs(){
-    for (int size = 400; size < 410; size++){
+    int graph_sizes[10];
+    double graph_times_unopt[10];
+    double graph_times_opt[10];
+
+    int index = 0;
+    int n = 400;
+    for (int size = n; size < n + 10; size++){
+        graph_sizes[index] = size;
+
         clock_t start, end;
         double fin_time1, fin_time2;
 
@@ -43,11 +51,25 @@ int make_graphs(){
         fin_time2 = ((double) (end - start)) / CLOCKS_PER_SEC;;
         printf("time2: ");
         printf("%f\n",fin_time2);
+
+        // used to make graphs
+        graph_sizes[index] = size;
+        graph_times_unopt[index] = fin_time1;
+        graph_times_opt[index] = fin_time2;
+        //
+        index++;
+
         free(new_mat1);
         free(new_mat2);
 
     }
+
+    writeArrayToFile("data.txt", (double *) graph_sizes, 10);
+    writeArrayToFile("data.txt", graph_times_unopt, 10);
+    writeArrayToFile("data.txt", graph_times_opt, 10);
+
     return 0;
+
 
 }
 
