@@ -21,7 +21,7 @@ int test_unoptimized(double *a, int arows, int acols,
 }
 
 int make_graphs(){
-    int graph_sizes[10];
+    double graph_sizes[10];
     double graph_times_unopt[10];
     double graph_times_opt[10];
 
@@ -64,7 +64,7 @@ int make_graphs(){
 
     }
 
-    writeArrayToFile("data.txt", (double *) graph_sizes, 10);
+    writeArrayToFile("data.txt", graph_sizes, 10);
     writeArrayToFile("data.txt", graph_times_unopt, 10);
     writeArrayToFile("data.txt", graph_times_opt, 10);
 
