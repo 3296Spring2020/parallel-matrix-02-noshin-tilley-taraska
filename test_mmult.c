@@ -29,16 +29,16 @@ int make_graphs(){
         double* new_mat2 = malloc(size * size * sizeof(double));
         double* m1a = gen_matrix(size,size); // needs malloc
         double* m1b = gen_matrix(size,size); // needs malloc
-        start = time(NULL);
+        start = clock();
         mmult1(new_mat1 ,m1a,size,size,m1b,size,size);
-        //end = clock();
-        fin_time1 = (double)(time(NULL) - start);
+        end = clock();
+        fin_time1 = (end - start);
         printf("time1: ");
         printf("%lu\n",fin_time1);
-        start = time(NULL);
+        start = clock();
         mmult2(new_mat2 ,m1a,size,size,m1b,size,size);
-        //end = clock();
-        fin_time2 = (double)(time(NULL) - start);
+        end = clock();
+        fin_time2 = (end - start);
         printf("time2: ");
         printf("%lu\n",fin_time2);
         free(new_mat1);
