@@ -10,6 +10,16 @@
 
 #include "mat.h"
 
+int mmult(double *c, double *a, int aRows, int aCols, double *b, int bRows, int bCols);
+int mmult_omp(double *c,double *a, int aRows, int aCols,double *b, int bRows, int bCols);
+
+double* gen_matrix(int n, int m);
+void compare_matrices(double* a, double* b, int nRows, int nCols);
+
+double deltaTime(struct timespec* start, struct timespec* end) {
+  double delta = (end->tv_sec - start->tv_sec) + (end->tv_nsec - start->tv_nsec)/1e9;
+  return delta;
+}
 int main(int argc, char* argv[]) {
     struct timespec start;
     struct timespec end;
@@ -38,5 +48,5 @@ int main(int argc, char* argv[]) {
     } else {
         fprintf(stderr, "Usage %s <n>\n", argv[0]);
     }
-}
 
+}

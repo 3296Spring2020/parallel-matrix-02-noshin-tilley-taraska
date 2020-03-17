@@ -32,11 +32,13 @@ int main(int argc, char* argv[]) {
     MPI_Status status;
 
     /* insert other global variables here */
-
+    int aRows, bRows, aCols, bCols;
+    
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
     MPI_Comm_rank(MPI_COMM_WORLD, &myid);
     if (argc > 1) {
+
         
         
         //FILE* matrixAPtr , *matrixBPtr;
