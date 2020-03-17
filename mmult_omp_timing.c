@@ -9,6 +9,17 @@
 #include <stdlib.h>
 #include "mat.h"
 
+
+int mmult(double *c, double *a, int aRows, int aCols, double *b, int bRows, int bCols);
+int mmult_omp(double *c,double *a, int aRows, int aCols,double *b, int bRows, int bCols);
+
+double* gen_matrix(int n, int m);
+// was a void comp_mat earlier
+int compare_matrices(double* a, double* b, int nRows, int nCols);
+
+// double delta time was here
+
+
 int main(int argc, char* argv[]) {
     struct timespec start;
     struct timespec end;
