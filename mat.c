@@ -130,10 +130,12 @@ double deltaTime(struct timespec *start, struct timespec *end) {
 }
 
 // converts a matrix size and its finishing time to graph format
+// converts a matrix size and its finishing time to graph format
 void writeArrayToFile(char* fileName, double* arr, int arrlen){
     FILE *fptr = fopen (fileName,"a");
     for (int i = 0; i < arrlen; ++i)
         fprintf(fptr, "%f", arr[i]);
+        fprintf(fptr, "%s", ", ");
     fprintf(fptr, "\n");
 //    fprintf(fptr,"%s",message);
 //    fwrite(arr, sizeof(arr), 10, fptr);
