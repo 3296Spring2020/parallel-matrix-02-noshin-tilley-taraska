@@ -19,7 +19,7 @@ int mmult(double *c, double *a, int aRows, int aCols, double *b, int bRows, int 
 
 
 int main(int argc, char* argv[]) {
-    int aRows, aCols, bCols, bRows;
+//     int aRows, aCols, bCols, bRows;
     double *aa;    /* the A matrix */
     double *bb;    /* the B matrix */
     double *cc1;    /* A x B computed using the omp-mpi code you write */
