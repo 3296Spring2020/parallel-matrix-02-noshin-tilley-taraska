@@ -1,8 +1,8 @@
-##SIMD- Single Instruction, multiple data
+## SIMD- Single Instruction, multiple data
 
 Class of parallel computers that perform the same operation on multiple data points simultaneously. Simultaneous computations, but only a single instruction at a given moment. Each instruction performs same operation on multiple streams of data simultaneously
 
-##OpenMP- Open Multi-Processing, 
+## OpenMP- Open Multi-Processing, 
 symmetric multiprocessing API that supports multi-platform shared memory multiprocessing programming. Way to program on shared memory devices. Parallelism occurs where every parallel thread has access to all your data. Takes advantage of parallelism by rewriting the program. Computation among threads. Three types of API requirements: compiler directives, runtime/library runtimes, environment variables. 
 OpenMP types of parallelism: 
 -Thread Based Parallelism 
