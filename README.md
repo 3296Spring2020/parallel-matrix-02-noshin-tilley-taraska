@@ -50,3 +50,4 @@ work involved with getting the matrices to the right format and getting files to
 # Relevant Things To Project
 
 ![alt text](https://github.com/3296Spring2020/parallel-matrix-02-noshin-tilley-taraska/blob/master/graph-page-001.jpg?raw=true)
+![](https://github.com/3296Spring2020/parallel-matrix-02-noshin-tilley-taraska/blob/master/lab%206.PNG?raw=true)
