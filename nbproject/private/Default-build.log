@@ -1,0 +1,11 @@
+gcc -c mmult.c
+gcc -c -O3 -fopenmp mmult_omp.c
+gcc -c -O3 mmult_omp_timing.c
+mmult_omp_timing.c: In function 'main':
+mmult_omp_timing.c:29:20: warning: implicit declaration of function 'deltaTime' [-Wimplicit-function-declaration]
+         times[0] = deltaTime(&start, &end);
+                    ^~~~~~~~~
+gcc -o mmult -fopenmp -O3 mmult.o mmult_omp.o mmult_omp_timing.o mat.c -o mmult_omp_timing
+mpicc -O3 -o matrix_times_vector matrix_times_vector.c mat.c
+make: mpicc: Command not found
+make: *** [Makefile:27: matrix_times_vector] Error 127

@@ -21,31 +21,55 @@ int test_unoptimized(double *a, int arows, int acols,
 }
 
 int make_graphs(){
-    for (int size = 1; size < 10; size++){
-        clock_t start, end, fin_time1, fin_time2;
+    double graph_sizes[10];
+    double graph_times_unopt[10];
+    double graph_times_opt[10];
+
+    int index = 0;
+    int n = 400;
+    for (int size = n; size < n + 10; size++){
+        graph_sizes[index] = size;
+
+        clock_t start, end;
+        double fin_time1, fin_time2;
+
 //    malloc(MAT_SIZE * MAT_SIZE * sizeof(double));
 //    malloc(MAT_SIZE * MAT_SIZE * sizeof(double));
         double* new_mat1 = malloc(size * size * sizeof(double));
         double* new_mat2 = malloc(size * size * sizeof(double));
         double* m1a = gen_matrix(size,size); // needs malloc
         double* m1b = gen_matrix(size,size); // needs malloc
-        start = time(NULL);
+        start = clock();
         mmult1(new_mat1 ,m1a,size,size,m1b,size,size);
-        //end = clock();
-        fin_time1 = (double)(time(NULL) - start);
+        end = clock();
+        fin_time1 = ((double) (end - start)) / CLOCKS_PER_SEC;;
         printf("time1: ");
-        printf("%lu\n",fin_time1);
-        start = time(NULL);
+        printf("%f\n",fin_time1);
+        start = clock();
         mmult2(new_mat2 ,m1a,size,size,m1b,size,size);
-        //end = clock();
-        fin_time2 = (double)(time(NULL) - start);
+        end = clock();
+        fin_time2 = ((double) (end - start)) / CLOCKS_PER_SEC;;
         printf("time2: ");
-        printf("%lu\n",fin_time2);
+        printf("%f\n",fin_time2);
+
+        // used to make graphs
+        graph_sizes[index] = size;
+        graph_times_unopt[index] = fin_time1;
+        graph_times_opt[index] = fin_time2;
+        //
+        index++;
+
         free(new_mat1);
         free(new_mat2);
 
     }
+
+    writeArrayToFile("data.txt", graph_sizes, 10);
+    writeArrayToFile("data.txt", graph_times_unopt, 10);
+    writeArrayToFile("data.txt", graph_times_opt, 10);
+
     return 0;
+
 
 }
 

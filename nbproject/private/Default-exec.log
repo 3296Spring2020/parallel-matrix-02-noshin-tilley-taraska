@@ -1,0 +1,35 @@
+called: C:\cygwin64\bin\gcc.exe
+	C:\Users\Sarah\Desktop\parallel-matrix-02-noshin-tilley-taraska
+	C:\cygwin64\bin\gcc.exe
+	-c
+	mmult.c
+
+called: C:\cygwin64\bin\gcc.exe
+	C:\Users\Sarah\Desktop\parallel-matrix-02-noshin-tilley-taraska
+	C:\cygwin64\bin\gcc.exe
+	-c
+	-O3
+	-fopenmp
+	mmult_omp.c
+
+called: C:\cygwin64\bin\gcc.exe
+	C:\Users\Sarah\Desktop\parallel-matrix-02-noshin-tilley-taraska
+	C:\cygwin64\bin\gcc.exe
+	-c
+	-O3
+	mmult_omp_timing.c
+
+called: C:\cygwin64\bin\gcc.exe
+	C:\Users\Sarah\Desktop\parallel-matrix-02-noshin-tilley-taraska
+	C:\cygwin64\bin\gcc.exe
+	-o
+	mmult
+	-fopenmp
+	-O3
+	mmult.o
+	mmult_omp.o
+	mmult_omp_timing.o
+	mat.c
+	-o
+	mmult_omp_timing
+

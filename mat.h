@@ -14,4 +14,6 @@ int mmult_omp(double *c,
 		      double *a, int aRows, int aCols,
 		      double *b, int bRows, int bCols);
 
+void writeArrayToFile(char* fileName, double* arr, int arrlen);
+
 #endif
