@@ -1,6 +1,3 @@
-# parallel-matrix-02-noshin-tilley-taraska
-parallel-matrix-bmo created by GitHub Classroom
-
 # Distributed Parallel Computing
 For our solution to work, we had to alter a number of files where certain algorithms resided. For example, the original mmult()
 function and the optimized SIMD mmult() function reside in mmult.c. From this file and test_mmult.c, we were able to format the 
@@ -51,3 +48,4 @@ work involved with getting the matrices to the right format and getting files to
 
 ![alt text](https://github.com/3296Spring2020/parallel-matrix-02-noshin-tilley-taraska/blob/master/graph-page-001.jpg?raw=true)
 ![](https://github.com/3296Spring2020/parallel-matrix-02-noshin-tilley-taraska/blob/master/lab%206.PNG?raw=true)
+
