@@ -24,7 +24,6 @@ int make_graphs(){
     double graph_sizes[10];
     double graph_times_unopt[10];
     double graph_times_opt[10];
-//     double graph_times_mpi_omp[10];
 
     int index = 0;
     int n = 100;
@@ -32,13 +31,12 @@ int make_graphs(){
         graph_sizes[index] = size;
 
         clock_t start, end;
-        double fin_time1, fin_time2 //,fin_time3;
+        double fin_time1, fin_time2;
 
 //    malloc(MAT_SIZE * MAT_SIZE * sizeof(double));
 //    malloc(MAT_SIZE * MAT_SIZE * sizeof(double));
         double* new_mat1 = malloc(size * size * sizeof(double));
         double* new_mat2 = malloc(size * size * sizeof(double));
-//         double* new_mat3 = malloc(size * size * sizeof(double));
         double* m1a = gen_matrix(size,size); // needs malloc
         double* m1b = gen_matrix(size,size); // needs malloc
         start = clock();
@@ -53,34 +51,22 @@ int make_graphs(){
         fin_time2 = ((double) (end - start)) / CLOCKS_PER_SEC;;
         printf("time2: ");
         printf("%f\n",fin_time2);
-//         mmult_mpi_omp(new_mat3 ,m1a,size,size,m1b,size,size);
-//         start = clock();
-//         end = clock();
-
-//         fin_time3 = ((double) (end - start)) / CLOCKS_PER_SEC;;
-//         printf("time3: ");
-//         printf("%f\n",fin_time3);
-
-
 
         // used to make graphs
         graph_sizes[index] = size;
         graph_times_unopt[index] = fin_time1;
         graph_times_opt[index] = fin_time2;
-//         graph_times_mpi_omp[index] = fin_time3;
         //
         index++;
 
         free(new_mat1);
         free(new_mat2);
-//         free(new_mat3);
 
     }
 
     writeArrayToFile("data.txt", graph_sizes, 10);
     writeArrayToFile("data.txt", graph_times_unopt, 10);
     writeArrayToFile("data.txt", graph_times_opt, 10);
-//     writeArrayToFile("data.txt", graph_times_mpi_omp, 10);
 
     return 0;
 
