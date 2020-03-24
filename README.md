@@ -19,7 +19,7 @@ I worked on answering the research question and the matrix multiplication on Wol
 
 ## Dominic Taraska
 
-I worked on answering the research question and the matrix multiplication on Wolfgand cluster with MPI (Distributed Memory). I also made the included graph and helped with general troubleshooting. 
+I worked on answering the research question and the matrix multiplication on Wolfgand cluster with MPI (Distributed Memory). I also made the included graph and helped with general troubleshooting. I worked on graph automation and made the final graph with all 5 methods.
 
 # Full Project Life Cycle
 We used the project board as a way to realize what needed to get done, we grouped tasks into when they needed to be done and
