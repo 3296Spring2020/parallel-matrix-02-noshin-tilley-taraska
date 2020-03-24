@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
     if (argc > 1) {
 
 
-        for(x = 100; x < 1000; x+100) {
+        for(x = 100; x < 1000;) {
 
 
             //FILE* matrixAPtr , *matrixBPtr;
@@ -111,6 +111,18 @@ int main(int argc, char* argv[]) {
                 endtime = MPI_Wtime();
                 printf("%f\n", (endtime - starttime));
                 printf("%d", x);
+                double fintime = endtime - starttime;
+                FILE *file;
+                file = fopen("data.txt", "a");
+                fprintf(file, "%lf ", fintime);
+                fclose(file);
+                free(response);
+                free(buffer);
+                free(cc1);
+                free(bb);
+                free(aa);
+                
+                x = x+100;
 
 
             }
