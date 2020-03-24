@@ -24,7 +24,7 @@ y = arr[:10]
 x1 = arr[10:20]
 x2 = arr[20:30]
 x3 = arr2[:10]
-x4 = arr[10:20]
+x4 = arr2[10:20]
 
 # y =np.array(y)
 # x1 = np.array(x1)
