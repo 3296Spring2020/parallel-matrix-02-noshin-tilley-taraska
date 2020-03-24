@@ -107,6 +107,7 @@ int main(int argc, char* argv[]) {
 // this is a child process
         else {
             // exit if there were more processes than rows...
+            MPI_Bcast(bb, nrows*ncols, MPI_DOUBLE, master, MPI_COMM_WORLD);
             if(myid <= nrows) {
                 // run indefinitely
                 while(1){
