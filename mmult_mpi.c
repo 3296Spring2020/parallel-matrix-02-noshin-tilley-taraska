@@ -110,7 +110,8 @@ int main(int argc, char* argv[]) {
                 }
                 endtime = MPI_Wtime();
                 printf("%f\n", (endtime - starttime));
-                
+                printf("%d", x);
+
 
             }
 // this is a child process
