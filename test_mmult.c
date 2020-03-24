@@ -64,9 +64,9 @@ int make_graphs(){
 
     }
 
-    writeArrayToFile("data.txt", graph_sizes, 10);
-    writeArrayToFile("data.txt", graph_times_unopt, 10);
-    writeArrayToFile("data.txt", graph_times_opt, 10);
+    writeArrayToFile("data.csv", graph_sizes, 10);
+    writeArrayToFile("data.csv", graph_times_unopt, 10);
+    writeArrayToFile("data.csv", graph_times_opt, 10);
 
     return 0;
 
