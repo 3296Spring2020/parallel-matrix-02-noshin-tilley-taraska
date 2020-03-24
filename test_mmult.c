@@ -26,8 +26,8 @@ int make_graphs(){
     double graph_times_opt[10];
 
     int index = 0;
-    int n = 400;
-    for (int size = n; size < n + 10; size++){
+    int n = 100;
+    for (int size = n; size <= n + 1000; size += 100){
         graph_sizes[index] = size;
 
         clock_t start, end;
