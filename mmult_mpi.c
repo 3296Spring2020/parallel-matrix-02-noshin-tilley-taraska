@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
     if (argc > 1) {
 
 
-        for(x = 100; x <= 1000; x+100) {
+        for(x = 100; x < 1000; x+100) {
 
 
             //FILE* matrixAPtr , *matrixBPtr;
@@ -110,16 +110,7 @@ int main(int argc, char* argv[]) {
                 }
                 endtime = MPI_Wtime();
                 printf("%f\n", (endtime - starttime));
-                double fintime = endtime - starttime;
-                FILE *file;
-                file = fopen("data.txt", "a");
-                fprintf(file, "%lf ", fintime);
-                fclose(file);
-                free(response);
-                free(buffer);
-                free(cc1);
-                free(bb);
-                free(aa);
+                
 
             }
 // this is a child process
@@ -145,6 +136,16 @@ int main(int argc, char* argv[]) {
                     }
                 }
             }
+            double fintime = endtime - starttime;
+            FILE *file;
+            file = fopen("data.txt", "a");
+            fprintf(file, "%lf ", fintime);
+            fclose(file);
+            free(response);
+            free(buffer);
+            free(cc1);
+            free(bb);
+            free(aa);
         }
     } else {
         fprintf(stderr, "Usage matrix_times_vector <size>\n");
