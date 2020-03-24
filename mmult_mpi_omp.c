@@ -120,7 +120,7 @@ int main(int argc, char* argv[]) {
                     row = status.MPI_TAG - 1;
 
                     // multiply the vector times the matrix and place it in response
-                    mmult_simd(response, buffer, 1, ncols, bb, nrows, ncols);
+                    mmult(response, buffer, 1, ncols, bb, nrows, ncols);
                     // send this response back to master with the approriate row tag
                     MPI_Send(response, nrows, MPI_DOUBLE, master, row, MPI_COMM_WORLD);
                 }
