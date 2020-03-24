@@ -113,7 +113,7 @@ int main(int argc, char* argv[]) {
             FILE *file;
             file = fopen("data.txt", "a");        
             fprintf(file, "%lf ", fintime);
-            fclose(outputfp);
+            fclose(file);
             
         }
 // this is a child process
