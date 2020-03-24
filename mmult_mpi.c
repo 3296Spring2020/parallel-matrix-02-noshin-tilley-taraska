@@ -112,7 +112,7 @@ int main(int argc, char* argv[]) {
             double fintime = endtime-starttime;
             FILE *file;
             file = fopen("data.txt", "a");        
-            fprintf(outputfp, "%lf ", fintime);
+            fprintf(file, "%lf ", fintime);
             fclose(outputfp);
             
         }
