@@ -105,9 +105,10 @@ int main(int argc, char* argv[]) {
                     // we are done, signal that we are complete by sending a 0 tag
                     MPI_Send(MPI_BOTTOM, 0 , MPI_DOUBLE , sender, 0, MPI_COMM_WORLD);
                 }
-                endtime = MPI_Wtime();
-                printf("%f\n",(endtime - starttime));
+                
             }
+            endtime = MPI_Wtime();
+            printf("%f\n",(endtime - starttime));
         }
 // this is a child process
         else {
