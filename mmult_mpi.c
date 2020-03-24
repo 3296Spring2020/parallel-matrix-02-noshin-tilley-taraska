@@ -109,6 +109,12 @@ int main(int argc, char* argv[]) {
             }
             endtime = MPI_Wtime();
             printf("%f\n",(endtime - starttime));
+            double fintime = endtime-starttime;
+            FILE *file;
+            file = fopen("data.txt", "a");        
+            fprintf(outputfp, "%lf ", fintime);
+            fclose(outputfp);
+            
         }
 // this is a child process
         else {
