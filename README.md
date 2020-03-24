@@ -15,7 +15,7 @@ I worked on the README, generating data for the graphs and formatting that data 
 and I did the vectorized SIMD matrix multiplication. I also helped with bugs and trouble shooting problems in C.
 
 ## Sarah Noshin
-I worked on answering the research question and the matrix multiplication on Wolfgand cluster with OMP and made a graph which showed that OMP is faster than matrix multiplication w/o parallelization and matrix multiplication w/ SIMD. 
+I worked on answering the research question and the matrix multiplication on Wolfgand cluster with OMP and made a graph which showed that OMP is faster than matrix multiplication w/o parallelization and matrix multiplication w/ SIMD. I also worked on matrix multiplication in C  on Wolfgand cluster with both  OpenMP and MPI and helped with trouble shooting.
 
 ## Dominic Taraska
 
