@@ -111,18 +111,7 @@ int main(int argc, char* argv[]) {
                 endtime = MPI_Wtime();
                 printf("%f\n", (endtime - starttime));
                 printf("%d", x);
-                double fintime = endtime - starttime;
-                FILE *file;
-                file = fopen("data.txt", "a");
-                fprintf(file, "%lf ", fintime);
-                fclose(file);
-                free(response);
-                free(buffer);
-                free(cc1);
-                free(bb);
-                free(aa);
                 
-                x = x+100;
 
 
             }
@@ -160,6 +149,18 @@ int main(int argc, char* argv[]) {
             free(bb);
             free(aa);
         }
+        double fintime = endtime - starttime;
+        FILE *file;
+        file = fopen("data.txt", "a");
+        fprintf(file, "%lf ", fintime);
+        fclose(file);
+        free(response);
+        free(buffer);
+        free(cc1);
+        free(bb);
+        free(aa);
+
+        x = x+100;
     } else {
         fprintf(stderr, "Usage matrix_times_vector <size>\n");
     }
