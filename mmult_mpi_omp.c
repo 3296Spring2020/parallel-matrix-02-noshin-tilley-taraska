@@ -21,6 +21,7 @@ int main(int argc, char* argv[]) {
     double *buffer;
     double *response;
     int myid, numprocs, i, j, row, numsent, sender, ansType, master;
+   
     double *buff;
     double ans;
     srand(time(0));
@@ -64,6 +65,7 @@ int main(int argc, char* argv[]) {
         if (myid == 0) {
             aa = gen_matrix(nrows, ncols);
             bb = gen_matrix(nrows, ncols);
+            starttime = MPI_Wtime();
             MPI_Bcast(bb, nrows * ncols,MPI_DOUBLE, master, MPI_COMM_WORLD);
             // this is the number of rows we will send, it is the minimum between numprocs - 1 or all the rows nrows
             for(int i = 0; i < min(numprocs - 1, nrows);i++) {
@@ -103,6 +105,8 @@ int main(int argc, char* argv[]) {
                     // we are done, signal that we are complete by sending a 0 tag
                     MPI_Send(MPI_BOTTOM, 0 , MPI_DOUBLE , sender, 0, MPI_COMM_WORLD);
                 }
+                endtime = MPI_Wtime();
+                printf("%f\n",(endtime - starttime));
             }
         }
 // this is a child process
